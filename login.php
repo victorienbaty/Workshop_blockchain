@@ -6,12 +6,12 @@ $db=connect();
 $sql = "SELECT id FROM login WHERE login = '$myusername' and password = '$mypassword'";
 $row=$db->query($sql);
 
-if($row == 1) {
+/*if($row == 1) {
          $_SESSION['login_user'] = $myusername;
          header("location: http://localhost/workshop_blockchain/welcome.php");
       }else {
          $error = "Your Login Name or Password is invalid";
-      }	
+      }	*/
 ?>	
 <html>
 	
