@@ -12,10 +12,9 @@ $user = $_POST['username'];
 $pass = $_POST['password'];
 
 if(empty($user) || empty($pass)) {
-$message = 'All field are required';
+$message = 'All fields are required';
 } else {
-$query = $conn->prepare("SELECT username, password FROM users WHERE 
-username=? AND password=? ");
+$query = $conn->prepare("SELECT login, password FROM login WHERE login='$user' AND password='$pass'");
 $query->execute(array($user,$pass));
 $row = $query->fetch(PDO::FETCH_BOTH);
 
@@ -25,10 +24,7 @@ if($query->rowCount() > 0) {
 } else {
   $message = "Username/Password is wrong";
 }
-
-
 }
-
 }
 ?>
 <!DOCTYPE html>
