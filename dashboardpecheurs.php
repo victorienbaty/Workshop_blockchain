@@ -77,7 +77,7 @@ li a:hover {
           <ul>
               <li><a href="dashboardpecheurs.php">Dashboard</a></li>
               <li><a href="ajoutincidents.php">Incidents</a></li>
-              <li><a href="meteo.php">Previsions meteo</a></li>            
+              <li><a href="http://www.meteofrance.com/accueil">Previsions meteo</a></li>            
               <li style="float:right"><a class="active" href="logout.php">Deconnexion</a></li>
             
          </ul> 
