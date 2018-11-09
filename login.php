@@ -257,10 +257,10 @@ img {vertical-align: middle;}
       </head>
 <body>
     <div class="topnav">
-        <a class="active" href="meteo.php">Meteo de la semaine</a>
+        <a class="active" href="http://www.meteofrance.com/accueil">Meteo de la semaine</a>
         
   <div class="login-container">
-    <form action = "" method = "post">
+    <form action = "dashboardpecheurs.php" method = "post">
        <label for="error"><?php echo $message;?></label>
       <input type="text" placeholder="Utilisateur" name="username">
       <input type="password" placeholder="Mot de passe" name="password">
