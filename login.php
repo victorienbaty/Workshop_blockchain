@@ -1,39 +1,4 @@
-<?php
-session_start();
-if(!empty($_SESSION['username'])) {
-header('location:plan.php');
-}
-require 'connection.php';
-$message="";
 
-if(isset($_POST['login'])) {
-
-$user = $_POST['username'];
-$pass = $_POST['password'];
-
-if(empty($user) || empty($pass)) {
-$message = 'All fields are required';
-} else {
-$query = $conn->prepare("SELECT login, password FROM login WHERE login='$user' AND password='$pass'");
-$query->execute(array($user,$pass));
-$row = $query->fetch(PDO::FETCH_BOTH);
-
-$row2=$conn->query2("SELECT role FROM login WHERE login='$user'");
-
-if($query->rowCount() > 0) {
-  $_SESSION['username'] = $user;
-  if ($row2="pecheur"){
-  header('location:dashboardpecheur.php');}
-  elseif ($row2="revendeur")
-  header('location:dashboardrevendeur.php');
-  elseif ($row2="Assureur")
-  header('location:dashboardassureurs.php');
-} else {
-  $message = "Username/Password is wrong";
-}
-}
-}
-?>
 <html>
 	
    <head>	
@@ -257,11 +222,11 @@ img {vertical-align: middle;}
       </head>
 <body>
     <div class="topnav">
-        <a class="active" href="meteo.php">Meteo de la semaine</a>
+        <a class="active" href="http://www.meteofrance.com/accueil">Meteo de la semaine</a>
         
   <div class="login-container">
-    <form action = "" method = "post">
-       <label for="error"><?php echo $message;?></label>
+    <form action = "dashboardpecheurs.php" method = "post">
+       <label for="error"></label>
       <input type="text" placeholder="Utilisateur" name="username">
       <input type="password" placeholder="Mot de passe" name="password">
       <button type="submit">Connexion</button>
