@@ -181,7 +181,7 @@ input:checked + .slider:before {
   <tr>
     <td>0160</td>
     <td>30/05/2015</td>       
-    <td>Francisco Chingchang</td>
+    <td>Francisco Chang</td>
     <td>120</td>
     <td>62,4</td>
     <td>Valide</td>
